@@ -1,0 +1,615 @@
+Random Forest 
+Dataset Shape: (300, 6)
+  Industry      Revenue  # of Employees  CISO / CIO Public / Private   \
+0      BSO  125300000.0             700         0.0           Private   
+1      BSF   30000000.0             130         0.0           Private   
+2      BSO  400000000.0            1700         1.0           Private   
+3      BSO    9000000.0             100         0.0           Private   
+4      BSO  150000000.0             250         0.0           Private   
+
+   Records_Affected  
+0               837  
+1             10141  
+2             27742  
+3               388  
+4               107  
+
+Dataset Shape After Removing Missing Values:
+(298, 6)
+
+Training observations: 208
+Testing observations: 90
+
+==============================
+Random Forest Performance
+==============================
+MAE : 166,120.04
+RMSE: 834,577.39
+R²  : 0.0411
+
+First 20 Predictions
+    Actual  Predicted
+0   701475    49498.0
+1     1711    71728.0
+2     1618   109545.0
+3     1354    24262.0
+4   687033    74598.0
+5     9740     2899.0
+6      279     2179.0
+7    43000     2635.0
+8      799     3095.0
+9     1011     9811.0
+10    3464     2878.0
+11    2010    42259.0
+12  538959    57397.0
+13    1512     1118.0
+14     290    51170.0
+15    9297   457204.0
+16   14500   361518.0
+17     118      661.0
+18    2324    55139.0
+19    1084     1928.0
+
+Feature Importance
+                   Variable  Importance
+0                   Revenue    0.501657
+1            # of Employees    0.372510
+7              Industry_MED    0.075266
+3              Industry_BSO    0.028276
+2                CISO / CIO    0.014196
+9  Public / Private _Public    0.006588
+4              Industry_BSR    0.001159
+5              Industry_EDU    0.000236
+8              Industry_NGO    0.000094
+6              Industry_GOV    0.000018
+
+Random Forest Log Transformed Target 
+Predictor Variables
+Index(['Revenue', '# of Employees', 'CISO / CIO', 'Industry_BSO',
+       'Industry_BSR', 'Industry_EDU', 'Industry_GOV', 'Industry_MED',
+       'Industry_NGO', 'Public / Private _Public'],
+      dtype='object')
+
+Dataset Shape
+(298, 10)
+
+===================================
+RANDOM FOREST PERFORMANCE
+===================================
+MAE  : 135,991.04
+RMSE : 861,185.80
+R²   : -0.0211
+
+===================================
+LOG SCALE PERFORMANCE
+===================================
+MAE  : 2.2586
+RMSE : 3.0078
+R²   : -0.0061
+
+===================================
+FEATURE IMPORTANCE
+===================================
+                    Feature  Importance
+0                   Revenue    0.432813
+1            # of Employees    0.343681
+7              Industry_MED    0.095128
+3              Industry_BSO    0.055826
+2                CISO / CIO    0.022673
+8              Industry_NGO    0.021659
+9  Public / Private _Public    0.017554
+5              Industry_EDU    0.005516
+4              Industry_BSR    0.003579
+6              Industry_GOV    0.001571
+ 
+
+===================================
+FINAL RANDOM FOREST MODEL
+===================================
+RandomForestRegressor(n_estimators=500, n_jobs=-1, random_state=42)
+
+Tuned Random Forest Regression 
+Predictor Variables
+Index(['Revenue', '# of Employees', 'CISO / CIO', 'Industry_BSO',
+       'Industry_BSR', 'Industry_EDU', 'Industry_GOV', 'Industry_MED',
+       'Industry_NGO', 'Public / Private _Public'],
+      dtype='object')
+
+Dataset Shape
+(298, 10)
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+
+===================================
+Best Random Search Parameters
+===================================
+{'n_estimators': 800, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': 30, 'bootstrap': True}
+Fitting 5 folds for each of 27 candidates, totalling 135 fits
+
+===================================
+Best Grid Search Parameters
+===================================
+{'max_depth': 25, 'min_samples_split': 6, 'n_estimators': 800}
+
+===================================
+MODEL PERFORMANCE
+===================================
+MAE  : 134,982.65
+RMSE : 861,735.72
+R²   : -0.0224
+
+===================================
+LOG SCALE PERFORMANCE
+===================================
+MAE  : 2.2311
+RMSE : 2.9889
+R²   : 0.0065
+
+===================================
+FEATURE IMPORTANCE
+===================================
+                    Feature  Importance
+0                   Revenue    0.429777
+1            # of Employees    0.329725
+7              Industry_MED    0.114068
+3              Industry_BSO    0.062316
+8              Industry_NGO    0.024958
+2                CISO / CIO    0.019642
+9  Public / Private _Public    0.012069
+5              Industry_EDU    0.004177
+4              Industry_BSR    0.003025
+6              Industry_GOV    0.000244
+
+===================================
+FINAL TUNED RANDOM FOREST
+===================================
+RandomForestRegressor(max_depth=25, min_samples_split=6, n_estimators=800,
+                      n_jobs=-1, random_state=42)
+
+
+
+
+
+
+
+
+
+XG Boost 
+Dataset Shape: (300, 6)
+  Industry      Revenue  # of Employees  CISO / CIO Public / Private   \
+0      BSO  125300000.0             700         0.0           Private   
+1      BSF   30000000.0             130         0.0           Private   
+2      BSO  400000000.0            1700         1.0           Private   
+3      BSO    9000000.0             100         0.0           Private   
+4      BSO  150000000.0             250         0.0           Private   
+
+   Records_Affected  
+0               837  
+1             10141  
+2             27742  
+3               388  
+4               107  
+
+Dataset Shape After Removing Missing Values:
+(298, 6)
+
+Training observations: 208
+Testing observations: 90
+
+==============================
+XGBoost Performance
+==============================
+MAE : 164,184.56
+RMSE: 816,271.61
+R²  : 0.0827
+
+First 20 Predictions
+    Actual  Predicted
+0   701475    -5240.0
+1     1711    31774.0
+2     1618    97445.0
+3     1354     3028.0
+4   687033   167920.0
+5     9740     8848.0
+6      279     3527.0
+7    43000   -68576.0
+8      799     3341.0
+9     1011    24703.0
+10    3464   -12218.0
+11    2010    32450.0
+12  538959    98335.0
+13    1512     -461.0
+14     290    21786.0
+15    9297   440540.0
+16   14500   115525.0
+17     118   -13413.0
+18    2324    20331.0
+19    1084     -526.0
+
+Feature Importance
+                   Variable  Importance
+3              Industry_BSO    0.219923
+1            # of Employees    0.190832
+7              Industry_MED    0.186745
+0                   Revenue    0.160605
+2                CISO / CIO    0.155189
+9  Public / Private _Public    0.051482
+4              Industry_BSR    0.017110
+5              Industry_EDU    0.007708
+8              Industry_NGO    0.005323
+6              Industry_GOV    0.005083
+
+Tuned XG Boost Regression 
+
+Predictor Variables
+Index(['Revenue', '# of Employees', 'CISO / CIO', 'Industry_BSO',
+       'Industry_BSR', 'Industry_EDU', 'Industry_GOV', 'Industry_MED',
+       'Industry_NGO', 'Public / Private _Public'],
+      dtype='object')
+
+Dataset Shape
+(298, 10)
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+
+===================================
+Best Random Search Parameters
+===================================
+{'subsample': 0.6, 'reg_lambda': 1, 'reg_alpha': 1, 'n_estimators': 200, 'min_child_weight': 3, 'max_depth': 4, 'learning_rate': 0.01, 'gamma': 0, 'colsample_bytree': 1.0}
+Fitting 5 folds for each of 27 candidates, totalling 135 fits
+
+===================================
+Best Grid Search Parameters
+===================================
+{'learning_rate': 0.005, 'max_depth': 5, 'n_estimators': 100}
+
+===================================
+MODEL PERFORMANCE
+===================================
+MAE  : 133,612.18
+RMSE : 862,520.21
+R²   : -0.0242
+
+===================================
+LOG SCALE PERFORMANCE
+===================================
+MAE  : 2.0848
+RMSE : 2.9376
+R²   : 0.0403
+
+===================================
+FEATURE IMPORTANCE
+===================================
+                    Feature  Importance
+7              Industry_MED    0.512224
+3              Industry_BSO    0.103541
+9  Public / Private _Public    0.081546
+1            # of Employees    0.074606
+4              Industry_BSR    0.073615
+0                   Revenue    0.066110
+8              Industry_NGO    0.055420
+2                CISO / CIO    0.032938
+5              Industry_EDU    0.000000
+6              Industry_GOV    0.000000
+ 
+
+===================================
+FINAL TUNED XGBOOST MODEL
+===================================
+XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=True, eval_metric=None, feature_types=None,
+             feature_weights=None, gamma=None, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.005, max_bin=None, max_cat_threshold=None,
+             max_cat_to_onehot=None, max_delta_step=None, max_depth=5,
+             max_leaves=None, min_child_weight=None, missing=nan,
+             monotone_constraints=None, multi_strategy=None, n_estimators=100,
+             n_jobs=None, num_parallel_tree=None, ...)
+
+
+Stacked Ensemble XGBoost and Random Forest 
+
+Predictor Variables
+Index(['Revenue', '# of Employees', 'CISO / CIO', 'Industry_BSO',
+       'Industry_BSR', 'Industry_EDU', 'Industry_GOV', 'Industry_MED',
+       'Industry_NGO', 'Public / Private _Public'],
+      dtype='object')
+
+Dataset Shape
+(298, 10)
+
+===================================
+STACKED ENSEMBLE PERFORMANCE
+===================================
+MAE  : 133,730.49
+RMSE : 862,450.21
+R²   : -0.0241
+
+===================================
+LOG SCALE PERFORMANCE
+===================================
+MAE  : 2.1046
+RMSE : 2.9421
+R²   : 0.0374
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Extra Trees (Extremely Randomized Tree) 
+Dataset Shape: (300, 6)
+  Industry      Revenue  # of Employees  CISO / CIO Public / Private   \
+0      BSO  125300000.0             700         0.0           Private   
+1      BSF   30000000.0             130         0.0           Private   
+2      BSO  400000000.0            1700         1.0           Private   
+3      BSO    9000000.0             100         0.0           Private   
+4      BSO  150000000.0             250         0.0           Private   
+
+   Records_Affected  
+0               837  
+1             10141  
+2             27742  
+3               388  
+4               107  
+
+Dataset Shape After Removing Missing Values:
+(298, 6)
+
+Training observations: 208
+Testing observations: 90
+
+==============================
+Extra Trees Performance
+==============================
+MAE : 154,283.65
+RMSE: 860,137.28
+R²  : -0.0186
+
+First 20 Predictions
+    Actual  Predicted
+0   701475   142075.0
+1     1711    21491.0
+2     1618    90428.0
+3     1354     3707.0
+4   687033   378792.0
+5     9740     1704.0
+6      279     1760.0
+7    43000     2221.0
+8      799     1415.0
+9     1011     4092.0
+10    3464     8180.0
+11    2010   333882.0
+12  538959    24903.0
+13    1512     4363.0
+14     290    86711.0
+15    9297   643939.0
+16   14500    30517.0
+17     118      538.0
+18    2324     1837.0
+19    1084     6283.0
+
+Feature Importance
+                   Variable  Importance
+1            # of Employees    0.495920
+0                   Revenue    0.404872
+7              Industry_MED    0.046555
+2                CISO / CIO    0.031196
+9  Public / Private _Public    0.016152
+3              Industry_BSO    0.004560
+4              Industry_BSR    0.000427
+5              Industry_EDU    0.000156
+8              Industry_NGO    0.000108
+6              Industry_GOV    0.000054
+
+
+
+Run the model 5 times and take the average of each iteration 
+Ensemble model – calibrate how you ponderate between the two models – take both xgboost and random forest 
+THEN 
+Calibrate the two 
+Explain the Machine Learning tool 
+
+Mention past work – motivation 
+
+Study the machine learning tools 
+What do the metrics mean exactly 
+Make a grid to select the best predictions 
+-	For XG boost 
+o	You need to choose the linear or the tree and choose which is the best 
+o	Fix the best configure \
+o	Run to configure the best hyper parameters 
+-	Look for automatic ways that python can choose the best split 
+
+Create a distribution of the data 
+I need to tune the models to the parameters 
+
+# ==========================================================
+# XGBOOST REGRESSION
+# Predicting Records_Affected
+# 70% Training / 30% Testing
+# ==========================================================
+
+# ----------------------------------------------------------
+# 1. Import Libraries
+# ----------------------------------------------------------
+
+import pandas as pd
+import numpy as np
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import (
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score
+)
+
+from xgboost import XGBRegressor
+
+# ----------------------------------------------------------
+# 2. Load Dataset
+# ----------------------------------------------------------
+
+df = pd.read_excel("Data for Poisson Regression.xlsx")
+
+print("Dataset Shape:", df.shape)
+print(df.head())
+
+# ----------------------------------------------------------
+# 3. Keep Variables
+# ----------------------------------------------------------
+
+df = df[[
+    "Industry",
+    "Revenue",
+    "# of Employees",
+    "CISO / CIO",
+    "Public / Private ",
+    "Records_Affected"
+]]
+
+# ----------------------------------------------------------
+# 4. Remove Missing Values
+# ----------------------------------------------------------
+
+df = df.dropna()
+
+print("\nDataset Shape After Removing Missing Values:")
+print(df.shape)
+
+# ----------------------------------------------------------
+# 5. Response Variable
+# ----------------------------------------------------------
+
+y = df["Records_Affected"]
+
+# ----------------------------------------------------------
+# 6. Predictor Variables
+# ----------------------------------------------------------
+
+X = df.drop(columns=["Records_Affected"])
+
+# ----------------------------------------------------------
+# 7. Convert Categorical Variables
+# ----------------------------------------------------------
+
+X = pd.get_dummies(
+    X,
+    columns=[
+        "Industry",
+        "Public / Private "
+    ],
+    drop_first=True
+)
+
+# ----------------------------------------------------------
+# 8. Train/Test Split
+# ----------------------------------------------------------
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.30,
+    random_state=42
+)
+
+print("\nTraining observations:", len(X_train))
+print("Testing observations:", len(X_test))
+
+# ----------------------------------------------------------
+# 9. Fit XGBoost Model
+# ----------------------------------------------------------
+
+xgb = XGBRegressor(
+    objective="reg:squarederror",
+    n_estimators=500,
+    learning_rate=0.05,
+    max_depth=4,
+    subsample=0.8,
+    colsample_bytree=0.8,
+    random_state=42
+)
+
+xgb.fit(X_train, y_train)
+
+# ----------------------------------------------------------
+# 10. Predict
+# ----------------------------------------------------------
+
+y_pred = xgb.predict(X_test)
+
+# ----------------------------------------------------------
+# 11. Model Performance
+# ----------------------------------------------------------
+
+mae = mean_absolute_error(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+r2 = r2_score(y_test, y_pred)
+
+print("\n==============================")
+print("XGBoost Performance")
+print("==============================")
+print(f"MAE : {mae:,.2f}")
+print(f"RMSE: {rmse:,.2f}")
+print(f"R²  : {r2:.4f}")
+
+# ----------------------------------------------------------
+# 12. Actual vs Predicted
+# ----------------------------------------------------------
+
+comparison = pd.DataFrame({
+    "Actual": y_test.values,
+    "Predicted": np.round(y_pred)
+})
+
+print("\nFirst 20 Predictions")
+print(comparison.head(20))
+
+# ----------------------------------------------------------
+# 13. Feature Importance
+# ----------------------------------------------------------
+
+importance = pd.DataFrame({
+    "Variable": X.columns,
+    "Importance": xgb.feature_importances_
+})
+
+importance = importance.sort_values(
+    by="Importance",
+    ascending=False
+)
+
+print("\nFeature Importance")
+print(importance)
+
+# ----------------------------------------------------------
+# 14. Save Feature Importance (Optional)
+# ----------------------------------------------------------
+
+importance.to_csv(
+    "XGBoost_FeatureImportance.csv",
+    index=False
+)
